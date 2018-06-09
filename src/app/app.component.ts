@@ -40,19 +40,6 @@ export class MyApp {
         }
       } else {
         //in App
-        if (typeof MyCordovaPlugin != 'undefined') {
-            // MyCordovaPlugin.getDate((result:any)=>{
-            // });
-            // MyCordovaPlugin.echo('hhh');
-            // MyCordovaPlugin.changeStatusBar((result:any)=>{
-            //   alert(result);
-            // });
-            // MyCordovaPlugin.getMessages((result:any)=>{
-            //   alert('getMessages');
-            //   var messageObject : any = JSON.parse(result);
-            //   console.log(result);
-            // });
-        }
         console.log('MyApp: In App');
         this.mobileDBInit();  
       } 
