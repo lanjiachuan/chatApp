@@ -1,0 +1,37 @@
+.listHeader {
+    background: tomato;
+    color: white;
+}
+.userOnline {
+    color: green;
+}
+.userOffline {
+    color: red;
+}
+.addMargin {
+    margin-right: 21px !important;
+}
+.action-sheet-wrapper .ion-md-image:before {
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    content: " ";
+    background: url(../assets/profile.png);
+    background-repeat: no-repeat;
+    width: 10%;
+    height: 400%;
+    margin: 2px;
+    float: left;
+}
+.action-sheet-wrapper .ion-md-camera:before {
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    content: " ";
+    background: url(../assets/Camera.png);
+    background-repeat: no-repeat;
+    width: 10%;
+    height: 400%;
+    margin: 2px;
+    float: left;
+}

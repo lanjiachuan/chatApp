@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-navbar color="secondary">
+      <ion-title>Login Page</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-list>  
+        <ion-item>
+            <ion-label floating>Enter your full name</ion-label>
+            <ion-input #loginInput type="text" [(ngModel)]="myName" required></ion-input>    
+        </ion-item>
+        <div padding>
+            <button [disabled]="!myName" type="button" full ion-button (click)="startChat(myName)">Start chat</button>
+        </div>
+    </ion-list>
+  </ion-content>

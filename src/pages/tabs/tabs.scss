@@ -1,0 +1,109 @@
+page-tabs {
+  #tabsContent .tabs-md-secondary .tabbar{
+      //background: linear-gradient(to right,red,darkblue);
+      background: #f22c11;
+  }
+  #tabsHeader .toolbar-md-secondary .toolbar-background-md {
+      //background: linear-gradient(to right,red,darkblue);
+      background: #f22c11;
+  }
+
+  #tabsContent .scroll-content{
+      z-index: 10;
+  }
+  #tabsContent .tab-segment {
+    background: #F22C11;
+  }
+  #tabsContent .tab-segment .segment-button.segment-activated {
+    color :white !important; 
+  }
+  #tabsContent .tab-segment .segment-button {
+    color :white !important; 
+    border-width: 1px;
+    border-style: solid;
+    border-color: #387ef5;
+    margin-right: 0;
+    background: slateblue;
+  }
+  #tabsContent .scroll-content {
+    overflow: hidden !important;
+  }
+  #tabSlides .scroll-content {
+    overflow-y: auto !important;
+  }
+  #tabSlides .swiper-slide{
+      -webkit-box-align: initial !important;
+      -webkit-align-items: initial !important;
+      -ms-flex-align: initial !important;
+      align-items: initial !important;
+      -webkit-box-pack: initial !important;
+      -webkit-justify-content: initial !important; 
+      -ms-flex-pack: initial !important;
+      justify-content: initial !important;
+  }
+  #tabsHeader .tab-segment {
+    background: #F22C11;
+  }
+  #tabsHeader .tab-segment .segment-button.segment-activated {
+    color :white !important; 
+  }
+  #tabsHeader .tab-segment .segment-button {
+    color :white !important; 
+    border-width: 1px;
+    border-style: solid;
+    border-color: #387ef5;
+    margin-right: 0;
+    background: slateblue;
+  }
+  #tabSlides .swiper-slide{
+      -webkit-box-align: initial !important;
+      -webkit-align-items: initial !important;
+      -ms-flex-align: initial !important;
+      align-items: initial !important;
+      -webkit-box-pack: initial !important;
+      -webkit-justify-content: initial !important; 
+      -ms-flex-pack: initial !important;
+      justify-content: initial !important;
+  }
+  ion-slides {
+    height: auto;
+    ion-slide{
+      height: -webkit-fill-available !important;
+      ion-scroll {
+        position: initial; 
+        .scroll-content {
+          margin-top: 0;
+        }
+      }
+    } 
+       //height: auto;
+          // ion-slide span.color {
+      
+          //   display: block;
+          //   height: 50px;
+          //   width: 50px;
+      
+          //   max-width: 100%;
+          //   border-radius: 500rem;
+      
+          //   &.blue {
+          //     background: blue;
+          //   }
+      
+          //   &.red {
+          //     background: red;
+          //   }
+      
+          //   &.yellow {
+          //     background: yellow;
+          //   }
+      
+          // }
+        }
+        // ion-tabs{
+        //   .tabbar{
+        //       opacity: 1 !important;
+        //   }
+        // }
+        
+}

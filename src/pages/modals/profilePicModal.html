@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar color="secondary">
+      <ion-title>profile pic</ion-title>
+      <ion-buttons end>
+            <button ion-button icon-only (click)="closeModal()">
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+        <ion-card>
+            <ion-card-content>               
+                <img *ngIf="chatToObj.localProfilePicUrl" [src]="chatToObj.localProfilePicUrl" alt="uploaded image">
+            </ion-card-content>
+        </ion-card>
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar style="padding: 11px;" position="bottom">
+            <button style="margin: 0;float: right;" ion-fab mini>
+                <ion-icon name="information-circle"></ion-icon>
+            </button>
+            <button style="margin: 0" ion-fab mini (click)="openChatWindow()">
+                <ion-icon name="chatbubbles"></ion-icon>
+            </button>
+    </ion-toolbar>
+  </ion-footer>

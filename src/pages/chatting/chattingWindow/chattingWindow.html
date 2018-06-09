@@ -1,0 +1,41 @@
+<ion-header id="chattingWindowHeader">
+    <ion-navbar color="secondary" style="padding-top: 16px;">
+      <ion-title>
+            <ion-grid style="padding-top: 15px;">
+                <ion-row>
+                    <ion-col col-2>
+                        <ion-avatar item-start>
+                            <img *ngIf="chatToObj.localProfilePicUrl;else noPic" [src]="chatToObj.localProfilePicUrl">
+                            <ng-template #noPic>
+                                <ion-icon style="font-size: xx-large;" name="contact"></ion-icon>
+                            </ng-template>
+                        </ion-avatar>
+                    </ion-col>
+                    <ion-col col-10>
+                        <span style="font-size: large;">{{chatToObj.chatToUserName}}</span>
+                        <span style="font-size: small;display: block;">{{chatToObj.isOnline > 0 ? 'Online' : 'Offline'}}</span>       
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content #chattingWindow id="chatWindow" padding>
+    <ion-list no-lines>
+        <ion-item class="chat-item" *ngFor="let messageObj of messages" [@flyInOut]="'in'" style="height: 71px;">
+            <div class="chat-item-{{messageObj.position}}">
+                <div class="message">{{messageObj.message}}<span class="time">{{messageObj.sentTime | date: 'h:mm a'}}<span *ngIf="messageObj.position == 'right'" style="padding-left: 10px;"><ion-icon name="checkmark"></ion-icon></span></span></div>
+            </div>
+        </ion-item>
+    </ion-list>
+</ion-content>
+<ion-footer>
+    <ion-toolbar position="bottom">
+        <ion-item>
+            <ion-input #messageInput (input)="null" required type="text" class="messageDraft" [(ngModel)]="newMessage" placeholder="Type a Message"></ion-input>
+            <button [disabled]="!newMessage" ion-fab mini icon-only small item-right (click)="sendMessage(newMessage)">
+                <ion-icon name="send"></ion-icon>
+            </button>
+        </ion-item>
+    </ion-toolbar>
+</ion-footer>

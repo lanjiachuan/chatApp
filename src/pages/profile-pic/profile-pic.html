@@ -1,0 +1,22 @@
+<ion-header id="profilePicHeader">
+
+  <ion-navbar color="secondary" style="padding-top: 16px;">
+    <ion-title>{{myDetailObj.userName}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding id="profilePicContent">
+    <ion-grid>
+        <ion-row>
+          <ion-col col-12 style="text-align: center;">
+            <img *ngIf="myDetailObj.localProfilePicUrl;else noProfilePic" class="img-circle" [src]="myDetailObj.localProfilePicUrl">
+            <ng-template #noProfilePic>
+              <img class="img-circle" src="assets/no_profile_pic.png">
+            </ng-template>
+            <img (click)="uploadPic()" class="camera-circle" src="assets/profile_camera.png">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+</ion-content>

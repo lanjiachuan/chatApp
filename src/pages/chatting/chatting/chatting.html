@@ -1,0 +1,48 @@
+<!-- <ion-content padding>
+    <ion-list>
+        <ion-item *ngIf="chattingListIsEmpty"><span style="white-space: initial;color: saddlebrown;">Start chatting with your friend from friend list</span></ion-item>
+        <ng-container *ngIf="chattingListObj">
+            <button ion-item (click)="openChatWindow(chattingListObj[key])" *ngFor="let key of chattingListObj | keysPipe">
+                <ion-avatar (click)="openModal($event,chattingListObj[key])" item-start>
+                    <img *ngIf="chattingListObj[key].localProfilePicUrl;else noPic" [src]="chattingListObj[key].localProfilePicUrl">
+                    <ng-template #noPic>
+                        <ion-icon style="font-size: xx-large;" name="contact"></ion-icon>
+                    </ng-template>
+                </ion-avatar>
+                <h2>{{chattingListObj[key].chatToUserName}}</h2>
+                <p>{{chattingListObj[key].lastMessage}}</p>
+            </button>
+        </ng-container>
+    </ion-list>
+</ion-content> -->
+<ion-list>
+        <ion-item *ngIf="chattingListIsEmpty"><span style="white-space: initial;color: saddlebrown;">Start chatting with your friend from friend list</span></ion-item>
+        <ng-container *ngIf="chattingListObj">
+            <button ion-item (click)="openChatWindow(chattingListObj[key])" *ngFor="let key of chattingListObj | keysPipe">
+                <ion-avatar (click)="openModal($event,chattingListObj[key])" item-start>
+                    <img *ngIf="chattingListObj[key].localProfilePicUrl;else noPic" [src]="chattingListObj[key].localProfilePicUrl">
+                    <ng-template #noPic>
+                        <ion-icon style="font-size: xx-large;" name="contact"></ion-icon>
+                    </ng-template>
+                </ion-avatar>
+                <h2>{{chattingListObj[key].chatToUserName}}</h2>
+                <p>{{chattingListObj[key].lastMessage}}</p>
+                 <!-- <ion-note item-end style="text-align: center" [ngClass]="!chatObj.badgeNo ? 'addMargin':''">
+                <ion-icon [ngClass]="chatObj.isOnline==1?'userOnline':'userOffline'" name="radio-button-on"></ion-icon>
+                <p style="padding-left: 10px;"><ion-badge item-end>{{chatObj.badgeNo}}</ion-badge></p>
+                </ion-note> -->
+            </button>
+        </ng-container>
+        <!-- <button ion-item (click)="openChatWindow(chatObj)"*ngFor="let chatObj of chattingListObj.chatting">
+            <ion-avatar (click)="openModal($event,chatObj)" item-start>
+                <img *ngIf="chatObj.localProfilePicUrl;else noPic" [src]="chatObj.localProfilePicUrl">
+                <ng-template #noPic>
+                    <ion-icon style="font-size: xx-large;" name="contact"></ion-icon>
+                </ng-template>
+            </ion-avatar>
+            <h2>{{chatObj.chatToUserName}}</h2>
+            <p>{{chatObj.lastMessage}}</p>
+           
+        </button> -->
+    </ion-list>
+

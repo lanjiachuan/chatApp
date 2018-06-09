@@ -1,0 +1,38 @@
+
+<ion-header *ngIf="showHeaderBar" id="tabsHeader"  [@fadeInOut] >
+  <ion-navbar color="secondary" style="padding-top: 20px !important;">
+      <ion-title >Chat App</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="presentPopover($event)">
+          <ion-icon name="more"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<!-- (ionScroll)="scrollingFun($event)" -->
+<ion-content id="tabsContent" #contentRef >
+    <ion-segment class="tab-segment" [(ngModel)]="selectedTab" color="secondary" >
+        <ion-segment-button value="chatbubbles" (ionSelect)="changeSlide(0)">
+          <ion-icon name="chatbubbles"></ion-icon>
+          Chat
+        </ion-segment-button>
+        <ion-segment-button value="contacts" (ionSelect)="changeSlide(1)">
+          <ion-icon name="contacts"></ion-icon>
+          Friends
+        </ion-segment-button>
+      </ion-segment>
+  <!-- <ion-tabs selectedIndex="0" tabsPlacement="top" color="secondary" tabsHighlight="true" >
+    <ion-tab [root]="chattingPage" [rootParams]="chattingPageData" tabTitle="Chat" tabIcon="chatbubbles"></ion-tab>
+    <ion-tab [root]="friendListgPage" [rootParams]="friendListgPageData" tabTitle="Friends" tabIcon="contacts"></ion-tab>
+  </ion-tabs> -->
+  <ion-slides effect="slide" id="tabSlides" (ionSlideDidChange)="slideChanged($event)">
+      <ion-slide>
+        <chatting-page myRandomIdTemp="myRandomId"></chatting-page>
+      </ion-slide>
+      <ion-slide>
+          <ion-scroll scrollY="true">
+              <friend-list-page myRandomIdTemp="myRandomId"></friend-list-page>
+          </ion-scroll>
+      </ion-slide>
+    </ion-slides>
+</ion-content>

@@ -1,0 +1,68 @@
+<!-- <ion-content padding>
+        <ion-list color="danger">
+            <ion-list-header class="listHeader">{{myDetailObj.userName}}</ion-list-header>
+            <ion-item *ngIf="noActiveUsers"><span>No Active User</span></ion-item>
+            <ng-container *ngIf="friendObj">
+                <button ion-item (click)="openChatWindow(friendObj[key])" *ngFor="let key of friendObj | keysPipe">
+                    <ion-avatar (click)="openModal($event,friendObj[key])" item-start>
+                        <img *ngIf="friendObj[key].localProfilePicUrl;else noPic" [src]="friendObj[key].localProfilePicUrl">
+                        <ng-template #noPic>
+                            <ion-icon style="font-size: xx-large;" name="contact"></ion-icon>
+                        </ng-template>
+                    </ion-avatar>
+                    <h2>{{friendObj[key].userName}}</h2>
+                </button>
+            </ng-container>
+        </ion-list>
+</ion-content> -->
+<ion-list color="danger">
+        <ion-list-header class="listHeader">{{myDetailObj.userName}}</ion-list-header>
+        <ion-item *ngIf="noActiveUsers"><span>No Active User</span></ion-item>
+        <ng-container *ngIf="friendObj">
+            <button ion-item (click)="openChatWindow(friendObj[key])" *ngFor="let key of friendObj | keysPipe">
+                <ion-avatar (click)="openModal($event,friendObj[key])" item-start>
+                    <img *ngIf="friendObj[key].localProfilePicUrl;else noPic" [src]="friendObj[key].localProfilePicUrl">
+                    <ng-template #noPic>
+                        <ion-icon style="font-size: xx-large;" name="contact"></ion-icon>
+                    </ng-template>
+                </ion-avatar>
+                <h2>{{friendObj[key].userName}}</h2>
+            </button>
+        </ng-container>
+    </ion-list>
+<!-- 
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="newOrderLayout">
+        <ng-container *ngIf="!myRandomId;else startedChat">
+            <div class="row">
+                <div class="col-md-12">
+                    <button [disabled]="!myName" (click)="startChat(myName)" md-raised-button color="accent">Start Video Call</button>
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #startedChat>
+            <div class="row" *ngIf="myRandomId">
+                <div class="col-md-12">
+                    My name is {{myName}}
+                </div>
+            </div>
+        </ng-template>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <ul *ngFor="let activeUser of videoChatList | async">
+                    <ng-container *ngIf="activeUser.userName && activeUser.myRandomId!=myRandomId">
+                        <li style="cursor: pointer" (click)="connect(activeUser)">{{activeUser.userName}}</li>
+                            <button [disabled]="activeUser.calling" *ngIf="!receivingCallFrom && !connectionEstablished" (click)="initiateCall(activeUser); activeUser.calling=true" md-raised-button color="accent">{{activeUser.calling ? 'Calling' : 'Call'}} <span class="fa fa-phone"></span></button>
+                        <button [disabled]="establishingConnection" *ngIf="activeUser.myRandomId == receivingCallFrom && !connectionEstablished" (click)="answerCall();establishingConnection=true" md-raised-button color="accent">{{!establishingConnection ? 'Incoming Call click to answer':'Establishing Connection Please Wait'}}</button>
+                        <span style="color: red" *ngIf="connectionEstablished">Connection Established Enjoy</span>
+                        {{activeUser.calling}}
+                    </ng-container>
+                </ul>
+                <ng-container *ngIf="myRandomId && noActiveUsers">
+                    No one is online
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div> -->

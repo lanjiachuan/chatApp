@@ -1,0 +1,78 @@
+page-swipe-tabs {
+
+ $num-of-tabs: 5;
+
+ @mixin tabs {
+   @for $i from 1 through $num-of-tabs {
+     &:nth-of-type(#{$i}) {
+       &.segment-activated {
+         ~ .slide {
+           left: calc((100% / #{$num-of-tabs}) * #{$i - 1});
+         }
+       }
+     }
+   }
+ }
+
+.segment-button {
+   border: 0 !important;
+   @include tabs;
+   text-overflow: unset !important;
+ }
+
+  
+
+ .slide {
+   background: dodgerblue;
+   width: calc(100% / #{$num-of-tabs});
+   height: 4px;
+   position: absolute;
+   left: 0;
+   top: calc(100% - 4px);
+   transition: left 0.3s ease-out;
+ }
+
+
+ .toolbar-md {
+      padding: 0px !important;
+     min-height: 55px;
+     border-bottom-style: outset;
+     }
+
+.segment-md .segment-button{
+border-bottom-style: none !important;
+    
+    color: black;
+    font-weight: bold;
+}
+
+.segment-button {
+    
+    text-overflow: unset;
+    
+}
+ion-segment {
+    display: block;
+    white-space: nowrap;
+    font-size: 0;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    ion-segment-button.segment-button {
+        display: inline-block;
+        min-width: 110px;
+        width: auto;
+    }
+}
+
+.segment-md-dark .segment-button.segment-activated{
+    color:#488aff;
+}
+
+
+}
